@@ -1,25 +1,19 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
+title: "PA1_template.Rmd"
+output: html_document
 ---
 
+```{r echo=TRUE}
+#read activity.csv
+activity_df <- read.csv("activity.csv")
+str(activity_df)
 
-## Loading and preprocessing the data
+```
 
+You can also embed plots, for example:
 
+```{r, echo=TRUE}
+all.steps <- aggregate(steps ~ date, activity_df, sum, rm.na=TRUE)
+str(all.steps)
 
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
-
-
-
-## Imputing missing values
-
-
-
-## Are there differences in activity patterns between weekdays and weekends?
+```
